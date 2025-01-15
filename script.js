@@ -12,6 +12,7 @@ const solutions = {
     }
     return arr;
 }
+// Example: reverseArray([1, 2, 3, 4, 5]) => [5, 4, 3, 2, 1]`,
 
     solution2: `function maxSubarraySum(arr, k) {
     let maxSum = 0, currentSum = 0;
