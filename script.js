@@ -26,8 +26,40 @@ const solutions = {
     }
     return maxSum;
 }
-    };
+// Example: maxSubarraySum([2, 3, -1, 4, -2, 6], 3) => 8`,
 
+    solution3: `function isPalindrome(str) {
+    const stack = [];
+    for (let char of str) {
+        stack.push(char);
+    }
+    for (let char of str) {
+        if (char !== stack.pop()) {
+            return false;
+        }
+    }
+    return true;
+}
+// Example: isPalindrome("racecar") => true`,
+
+    solution4: `function binarySearch(arr, target) {
+    let left = 0, right = arr.length - 1;
+    while (left <= right) {
+        const mid = Math.floor((left + right) / 2);
+        if (arr[mid] === target) {
+            return mid;
+        } else if (arr[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return -1;
+}
+// Example: binarySearch([1, 3, 5, 7, 9], 5) => 2`
+};
+
+// Function to show solutions
 function showSolution(id) {
     const solutionElement = document.getElementById(id);
     if (solutionElement.style.display === "none" || !solutionElement.style.display) {
