@@ -1,62 +1,39 @@
 // Solutions for the questions
 const solutions = {
-    solution1: `function reverseArray(arr) {
-    let start = 0;
-    let end = arr.length - 1;
-    while (start < end) {
-        let temp = arr[start];
-        arr[start] = arr[end];
-        arr[end] = temp;
-        start++;
-        end--;
+    solution1: `function charFrequency(str) {
+    const freq = {};
+    for (const char of str) {
+        freq[char] = (freq[char] || 0) + 1;
+    }
+    return freq;
+}
+// Example: charFrequency("hello") => { h: 1, e: 1, l: 2, o: 1 }`,
+
+    solution2: `function reverseString(str) {
+    if (str === "") {
+        return "";
+    }
+    return reverseString(str.substr(1)) + str[0];
+}
+// Example: reverseString("hello") => "olleh"`,
+
+    solution3: `function bubbleSort(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = 0; j < arr.length - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // Swap
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+            }
+        }
     }
     return arr;
 }
-// Example: reverseArray([1, 2, 3, 4, 5]) => [5, 4, 3, 2, 1]`,
+// Example: bubbleSort([5, 3, 8, 4, 2]) => [2, 3, 4, 5, 8]`,
 
-    solution2: `function maxSubarraySum(arr, k) {
-    let maxSum = 0, currentSum = 0;
-    for (let i = 0; i < k; i++) {
-        currentSum += arr[i];
-    }
-    maxSum = currentSum;
-    for (let i = k; i < arr.length; i++) {
-        currentSum += arr[i] - arr[i - k];
-        maxSum = Math.max(maxSum, currentSum);
-    }
-    return maxSum;
+    solution4: `function sortByStringLength(arr) {
+    return arr.sort((a, b) => a.length - b.length);
 }
-// Example: maxSubarraySum([2, 3, -1, 4, -2, 6], 3) => 8`,
-
-    solution3: `function isPalindrome(str) {
-    const stack = [];
-    for (let char of str) {
-        stack.push(char);
-    }
-    for (let char of str) {
-        if (char !== stack.pop()) {
-            return false;
-        }
-    }
-    return true;
-}
-// Example: isPalindrome("racecar") => true`,
-
-    solution4: `function binarySearch(arr, target) {
-    let left = 0, right = arr.length - 1;
-    while (left <= right) {
-        const mid = Math.floor((left + right) / 2);
-        if (arr[mid] === target) {
-            return mid;
-        } else if (arr[mid] < target) {
-            left = mid + 1;
-        } else {
-            right = mid - 1;
-        }
-    }
-    return -1;
-}
-// Example: binarySearch([1, 3, 5, 7, 9], 5) => 2`
+// Example: sortByStringLength(["apple", "bat", "carrot", "dog"]) => ["bat", "dog", "apple", "carrot"]`
 };
 
 // Function to show solutions
