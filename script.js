@@ -56,7 +56,17 @@ const solutions = {
     }
     return -1;
 }
-// Example: binarySearch([1, 3, 5, 7, 9], 5) => 2`
+// Example: binarySearch([1, 3, 5, 7, 9], 5) => 2`,
+
+solution5: `function countFrequency(arr) {
+    const frequency = {};
+    for (let num of arr) {
+        frequency[num] = (frequency[num] || 0) + 1;
+    }
+    return frequency;
+}
+// Example: countFrequency([1, 2, 2, 3, 3, 3, 4]) => {1:1, 2:2, 3:3, 4:1}`
+
 };
 
 // Function to show solutions
