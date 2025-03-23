@@ -65,7 +65,22 @@ solution5: `function countFrequency(arr) {
     }
     return frequency;
 }
-// Example: countFrequency([1, 2, 2, 3, 3, 3, 4]) => {1:1, 2:2, 3:3, 4:1}`
+// Example: countFrequency([1, 2, 2, 3, 3, 3, 4]) => {1:1, 2:2, 3:3, 4:1}`,
+solution6: `function debounce(func, delay) {
+    let timeoutId;
+    return function(...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+            func.apply(this, args);
+        }, delay);
+    };
+}
+// Usage example:
+const sayHello = () => console.log("Hello!");
+const debouncedHello = debounce(sayHello, 1000);
+debouncedHello(); // Will only log "Hello!" after 1 second without repeated calls
+`
+
 
 };
 
