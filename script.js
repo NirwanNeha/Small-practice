@@ -58,7 +58,7 @@ const solutions = {
 }
 // Example: binarySearch([1, 3, 5, 7, 9], 5) => 2`,
 
-solution5: `function countFrequency(arr) {
+    solution5: `function countFrequency(arr) {
     const frequency = {};
     for (let num of arr) {
         frequency[num] = (frequency[num] || 0) + 1;
@@ -66,7 +66,8 @@ solution5: `function countFrequency(arr) {
     return frequency;
 }
 // Example: countFrequency([1, 2, 2, 3, 3, 3, 4]) => {1:1, 2:2, 3:3, 4:1}`,
-solution6: `function debounce(func, delay) {
+
+    solution6: `function debounce(func, delay) {
     let timeoutId;
     return function(...args) {
         clearTimeout(timeoutId);
@@ -78,10 +79,19 @@ solution6: `function debounce(func, delay) {
 // Usage example:
 const sayHello = () => console.log("Hello!");
 const debouncedHello = debounce(sayHello, 1000);
-debouncedHello(); // Will only log "Hello!" after 1 second without repeated calls
-`
+debouncedHello(); // Will only log "Hello!" after 1 second without repeated calls`,
 
-
+    solution7: `function findMiddle(head) {
+    let slow = head, fast = head;
+    while (fast !== null && fast.next !== null) {
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    return slow;
+}
+// Example:
+// Linked list: 1 -> 2 -> 3 -> 4 -> 5
+// Output: Node with value 3`
 };
 
 // Function to show solutions
